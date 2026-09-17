@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gremlins Server Launcher</title>
+  <meta name="description" content="Gremlins Server Launcher — manage your Minecraft servers from one place.">
+  <style>
+    :root {
+      --bg: #031007;
+      --bg2: #061a0a;
+      --panel: #09210d;
+      --panel2: #0d2e15;
+      --green: #7cff7c;
+      --green2: #3dcc55;
+      --text: #f4fff4;
+      --muted: #a9b9ad;
+      --red: #ff4b4b;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 80% 10%, rgba(61,204,85,.16), transparent 28%),
+        linear-gradient(135deg, var(--bg), var(--bg2) 55%, #020802);
+      min-height: 100vh;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      background: rgba(3,16,7,.9);
+      border-bottom: 1px solid #174d23;
+      backdrop-filter: blur(10px);
+    }
+    .brand { font-weight: 900; letter-spacing: 1px; color: var(--green); }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 24px; }
+    nav a:hover { color: var(--green); }
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 100px 7% 80px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #286b35;
+      border-radius: 999px;
+      color: var(--green);
+      background: rgba(18,61,27,.55);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: .98;
+      margin: 24px 0 18px;
+      letter-spacing: -3px;
+    }
+    h1 span { color: var(--green); }
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.6;
+    }
+    .buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 2px solid var(--green2);
+      color: white;
+      background: #176b2a;
+    }
+    .btn:hover { filter: brightness(1.15); transform: translateY(-1px); }
+    .btn.secondary { background: transparent; border-color: #286b35; color: var(--green); }
+    section { max-width: 1100px; margin: auto; padding: 70px 7%; }
+    .section-title { font-size: 34px; margin: 0 0 12px; color: var(--green); }
+    .section-subtitle { color: var(--muted); margin: 0 0 30px; line-height: 1.6; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .card {
+      background: linear-gradient(145deg, rgba(9,33,13,.96), rgba(3,16,7,.96));
+      border: 1px solid #174d23;
+      border-radius: 16px;
+      padding: 25px;
+      min-height: 180px;
+    }
+    .card h3 { margin: 0 0 10px; }
+    .card p { color: var(--muted); line-height: 1.6; margin: 0; }
+    .icon { font-size: 30px; margin-bottom: 14px; }
+    .download {
+      text-align: center;
+      background: linear-gradient(145deg, #09210d, #031007);
+      border: 1px solid #286b35;
+      border-radius: 20px;
+      padding: 45px 25px;
+    }
+    .download h2 { margin-top: 0; }
+    .note { color: var(--muted); font-size: 14px; margin-top: 16px; }
+    footer {
+      text-align: center;
+      color: #718076;
+      border-top: 1px solid #123d1b;
+      padding: 30px 7%;
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+      nav .links { display: none; }
+      h1 { letter-spacing: -1.5px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="brand">GREMLINS SERVER LAUNCHER</div>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#download">Download</a>
+      <a href="#phone">Phone</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="badge">🟢 GREMLINS SERVER LAUNCHER</div>
+    <h1>Your servers.<br><span>Your control.</span></h1>
+    <p>
+      A simple Minecraft server management launcher built for the Gremlins community.
+      Start servers, stop them, watch the live console, and send commands without leaving the app.
+    </p>
+    <div class="buttons">
+      <a class="btn" href="#download">Download for Windows</a>
+      <a class="btn secondary" href="#features">Explore Features</a>
+    </div>
+  </header>
+
+  <section id="features">
+    <h2 class="section-title">Built for server management</h2>
+    <p class="section-subtitle">Everything we've built into the launcher so far, presented in one place.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">🟢</div>
+        <h3>Start & Stop</h3>
+        <p>Launch a selected Minecraft server and shut it down from the same interface.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🖥️</div>
+        <h3>Live Console</h3>
+        <p>See server output directly inside the launcher instead of needing a separate console window.</p>
+      </article>
+      <article class="card">
+        <div class="icon">⌨️</div>
+        <h3>Command Center</h3>
+        <p>Send Minecraft server commands directly from the launcher command bar.</p>
+      </article>
+      <article class="card">
+        <div class="icon">➕</div>
+        <h3>Add More Servers</h3>
+        <p>Add new server folders as your collection grows. The launcher saves your server list.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🗑️</div>
+        <h3>Safe Removal</h3>
+        <p>Remove a server from the launcher without deleting its actual Minecraft files.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🌲</div>
+        <h3>Gremlin Theme</h3>
+        <p>A dark-green interface designed to match the Gremlins Server Launcher identity.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="download">
+      <h2 class="section-title">Download Gremlins Server Launcher</h2>
+      <p class="section-subtitle">
+        The Windows download will be connected here after the ClickOnce publish files are ready.
+      </p>
+      <a class="btn" href="#" onclick="alert('The Windows installer will be linked here after the first ClickOnce publish.'); return false;">Download Launcher</a>
+      <div class="note">Current site build: 0.1 • Windows version in development</div>
+    </div>
+  </section>
+
+  <section id="phone">
+    <h2 class="section-title">📱 Phone control</h2>
+    <p class="section-subtitle">
+      A companion phone app is planned so you can monitor and manage your servers remotely.
+      The phone app will be connected to the PC launcher rather than running Minecraft servers on the phone.
+    </p>
+    <div class="card">
+      <h3>Coming soon</h3>
+      <p>Server status • Start/stop controls • Console viewing • Command sending • More management tools</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Gremlins Server Launcher • Built for the Gremlins community
+  </footer>
+</body>
+</html>
